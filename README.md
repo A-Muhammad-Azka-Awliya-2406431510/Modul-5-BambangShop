@@ -48,7 +48,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [V] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
     -   [ ] Commit: `Create Subscriber model struct.`
     -   [ ] Commit: `Create Notification model struct.`
@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Pada contoh Observer di Head First, Subscriber dibuat sebagai interface karena biasanya terdapat banyak jenis observer dengan perilaku update yang berbeda. Namun pada kasus BambangShop saat ini, Subscriber masih berfungsi sebagai model data sederhana yang hanya menyimpan url dan name. Belum ada variasi perilaku yang perlu dibedakan.
+
+2. Untuk penyimpanan data, Vec sebenarnya masih dapat digunakan jika jumlah data kecil. Namun, keunikan seperti id pada Program dan url pada Subscriber harus divalidasi secara manual. Operasi seperti pencarian dan penghapusan juga memiliki kompleksitas O(n), sehingga kurang efisien jika data terus bertambah.
+
+3. Dari sudut pandang design pattern, Singleton dan DashMap memiliki peran yang berbeda. Singleton bertujuan untuk memastikan hanya ada satu instance global. Sementara itu, DashMap berfokus pada keamanan akses data dalam kondisi concurrent.
 
 #### Reflection Publisher-2
 
