@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. Dari sudut pandang design pattern, Singleton dan DashMap memiliki peran yang berbeda. Singleton bertujuan untuk memastikan hanya ada satu instance global. Sementara itu, DashMap berfokus pada keamanan akses data dalam kondisi concurrent.
 
 #### Reflection Publisher-2
+1. Dalam implementasi praktis seperti pada proyek ini, pemisahan antara Service, Repository, dan Model membantu menjaga pembagian tanggung jawab yang jelas. Model berfokus pada representasi data, Repository menangani akses dan penyimpanan data, sementara Service mengelola aturan bisnis serta alur proses.
+
+2. Jika seluruh logika ditempatkan di dalam Model, maka interaksi antar entitas seperti Program, Subscriber, dan Notification akan membuat masing-masing model saling bergantung pada detail internal satu sama lain. Hal ini dapat meningkatkan kompleksitas secara signifikan.
+
+3. Postman sangat membantu dalam proses validasi endpoint karena memungkinkan pengiriman request secara cepat dan terstruktur. Dengan Postman, saya dapat memeriksa status code, response body, dan headers untuk memastikan alur seperti subscribe, unsubscribe, dan notify berjalan sesuai dengan kontrak API.
 
 #### Reflection Publisher-3
