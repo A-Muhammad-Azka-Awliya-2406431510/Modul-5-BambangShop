@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 3. Postman sangat membantu dalam proses validasi endpoint karena memungkinkan pengiriman request secara cepat dan terstruktur. Dengan Postman, saya dapat memeriksa status code, response body, dan headers untuk memastikan alur seperti subscribe, unsubscribe, dan notify berjalan sesuai dengan kontrak API.
 
 #### Reflection Publisher-3
+1. Pada tutorial ini digunakan pendekatan Push model, karena publisher secara aktif mengirimkan data notifikasi ke setiap subscriber melalui HTTP POST saat suatu event terjadi, seperti create, delete, atau publish. Subscriber tidak perlu meminta data secara mandiri.
+
+2. Jika menggunakan Pull model, salah satu keuntungannya adalah payload dari publisher bisa lebih ringan karena hanya mengirimkan sinyal perubahan. Subscriber kemudian dapat mengambil detail data sesuai kebutuhannya sendiri.
+
+3. Jika proses notifikasi tidak menggunakan multi-threading, maka pengiriman ke subscriber akan berjalan secara berurutan dan bersifat blocking. Hal ini dapat memperlambat respons dari sisi publisher, terutama jika jumlah subscriber banyak atau ada subscriber yang lambat merespons.
